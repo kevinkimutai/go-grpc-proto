@@ -1,0 +1,12 @@
+syntax = "proto3";
+option go_package = "e-commerce-proto/payment";
+
+message CreatePaymentRequest {
+ float price = 1;
+}
+message CreatePaymentResponse {
+ float total_price = 1;
+}
+service Payment {
+ rpc Create(CreatePaymentRequest) returns (CreatePaymentResponse){}
+}
